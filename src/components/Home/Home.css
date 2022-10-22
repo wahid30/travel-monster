@@ -1,6 +1,8 @@
-/* .custom-bgc {
-  background-image: url("../../Rectangle1.png");
+.custom-bgc {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), #000),
+    url("../../../src/Rectangle1.png");
   height: 100vh;
-  background-size: cover;
   background-position: center;
-} */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
