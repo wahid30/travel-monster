@@ -104,7 +104,7 @@ const Header = () => {
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link to="/login" className="justify-between">
+                  <Link to="/login" className=" justify-between">
                     Login
                   </Link>
                 </li>
@@ -112,7 +112,20 @@ const Header = () => {
                   <Link to="/register">Register</Link>
                 </li>
                 <li>
-                  <button>LogOut</button>
+                  <button className="mt-2 btn btn-outline btn-success">
+                    Google
+                  </button>
+                </li>
+                <li>
+                  <button className=" mt-2 btn btn-info text-black">
+                    FaceBook
+                  </button>
+                </li>
+                <li>
+                  <button className="mt-2 btn btn-outline">GitHub</button>
+                </li>
+                <li>
+                  <button className="btn mt-2">LogOut</button>
                 </li>
               </ul>
             </div>
