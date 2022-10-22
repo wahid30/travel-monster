@@ -7,7 +7,7 @@ const Header = () => {
           <div className="flex-1">
             <a className="btn btn-ghost">
               <img
-                className="rounded-3xl h-[40px] bg-white"
+                className="rounded-full h-[40px] bg-white"
                 src="logo.png"
                 alt=""
               />
@@ -26,11 +26,11 @@ const Header = () => {
             <div className="flex-none">
               <ul className="menu menu-horizontal p-0">
                 <li>
-                  <a>Item 1</a>
+                  <a>News</a>
                 </li>
                 <li tabIndex={0}>
                   <a>
-                    Parent
+                    Blogs
                     <svg
                       className="fill-current"
                       xmlns="http://www.w3.org/2000/svg"
@@ -43,15 +43,15 @@ const Header = () => {
                   </a>
                   <ul className="p-2 bg-base-100">
                     <li>
-                      <a>Submenu 1</a>
+                      <a>Domestic</a>
                     </li>
                     <li>
-                      <a>Submenu 2</a>
+                      <a>International</a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a>Item 3</a>
+                  <a>Destination</a>
                 </li>
               </ul>
             </div>
