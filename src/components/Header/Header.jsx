@@ -1,12 +1,17 @@
 import React from "react";
-
 const Header = () => {
   return (
     <div>
       <nav>
         <div className="navbar bg-base-100">
           <div className="flex-1">
-            <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+            <a className="btn btn-ghost">
+              <img
+                className="rounded-3xl h-[40px] bg-white"
+                src="logo.png"
+                alt=""
+              />
+            </a>
           </div>
 
           <div className="form-control">
