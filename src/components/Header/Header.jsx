@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 const Header = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <div>
       <nav>
@@ -92,6 +95,9 @@ const Header = () => {
                   </div>
                 </div>
               </div>
+            </div>
+            <div>
+              <p>user name</p>
             </div>
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
