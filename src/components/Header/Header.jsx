@@ -2,9 +2,18 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 const Header = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user, forLogOut } = useContext(AuthContext);
+  // console.log(user);
   // console.log(photoURL);
+
+  const handleLogOut = () => {
+    forLogOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <nav>
@@ -132,7 +141,9 @@ const Header = () => {
                   <button className="mt-2 btn btn-outline">GitHub</button>
                 </li>
                 <li>
-                  <button className="btn mt-2">LogOut</button>
+                  <button onClick={handleLogOut} className="btn mt-2">
+                    LogOut
+                  </button>
                 </li>
               </ul>
             </div>
