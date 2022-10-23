@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signOut,
   signInWithPopup,
+  sendEmailVerification,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -29,7 +30,12 @@ const AuthProvider = ({ children }) => {
   };
 
   const forGoogleSingIn = (provider) => {
-    signInWithPopup(auth, provider);
+    return signInWithPopup(auth, provider);
+  };
+
+  const forEmailVerification = () => {
+    // setLoading(true);
+    return sendEmailVerification(auth.currentUser);
   };
 
   useEffect(() => {
@@ -49,6 +55,7 @@ const AuthProvider = ({ children }) => {
     loading,
     forLogOut,
     forGoogleSingIn,
+    forEmailVerification,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

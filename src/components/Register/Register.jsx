@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Register = () => {
-  const { forRegistration } = useContext(AuthContext);
+  const { forRegistration, forEmailVerification } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -17,10 +17,19 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        verifyEmail();
       })
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  const verifyEmail = () => {
+    forEmailVerification()
+      .then(() => {
+        alert("Please verify your email");
+      })
+      .catch((error) => console.log(error));
   };
   return (
     <div>
