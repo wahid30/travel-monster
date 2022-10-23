@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 const Header = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  const { email, photoURL } = user;
+  // console.log(photoURL);
   return (
     <div>
       <nav>
@@ -97,12 +98,12 @@ const Header = () => {
               </div>
             </div>
             <div>
-              <p>user name</p>
+              <p>{email}</p>
             </div>
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" />
+                  <img src={photoURL} />
                 </div>
               </label>
               <ul
