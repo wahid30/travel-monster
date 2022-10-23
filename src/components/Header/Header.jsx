@@ -1,10 +1,12 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 const Header = () => {
-  const { user, forLogOut } = useContext(AuthContext);
+  const { user, forLogOut, forGoogleSingIn } = useContext(AuthContext);
   // console.log(user);
   // console.log(photoURL);
+  const provider = new GoogleAuthProvider();
 
   const handleLogOut = () => {
     forLogOut()
@@ -12,6 +14,15 @@ const Header = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  const handleGoogleSingIn = () => {
+    forGoogleSingIn(provider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -128,7 +139,10 @@ const Header = () => {
                   <Link to="/register">Register</Link>
                 </li>
                 <li>
-                  <button className="mt-2 btn btn-outline btn-success">
+                  <button
+                    onClick={handleGoogleSingIn}
+                    className="mt-2 btn btn-outline btn-success"
+                  >
                     Google
                   </button>
                 </li>

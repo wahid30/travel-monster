@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
   const { forLogin } = useContext(AuthContext);
+
   const navigate = useNavigate();
   const location = useLocation();
 
