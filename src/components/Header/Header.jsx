@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 const Header = () => {
   const { user } = useContext(AuthContext);
-  const { email, photoURL } = user;
+  console.log(user);
   // console.log(photoURL);
   return (
     <div>
@@ -31,7 +31,7 @@ const Header = () => {
             <div className="flex-none">
               <ul className="menu menu-horizontal p-0">
                 <li>
-                  <a>News</a>
+                  <Link to="/news">News</Link>
                 </li>
                 <li tabIndex={0}>
                   <a>
@@ -98,12 +98,12 @@ const Header = () => {
               </div>
             </div>
             <div>
-              <p>{email}</p>
+              <p>{user?.email}</p>
             </div>
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src={photoURL} />
+                  <img src={user?.photoURL} />
                 </div>
               </label>
               <ul
